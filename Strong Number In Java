@@ -1,0 +1,26 @@
+import java.util.Scanner;
+class Strong {
+    public static void main(String[] args) {
+        int n, fact, sum = 0, last, temp;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter number:");
+        n = sc.nextInt();
+        temp = n;
+        while (n != 0) {
+            last = n % 10;
+            fact = 1;
+            // Compute factorial of the digit
+            for (int i = 1; i <= last; i++) {
+                fact *= i;
+            }
+            sum += fact;
+            n /= 10;
+        }
+        if (temp == sum) {
+            System.out.println("Strong number");
+        } else {
+            System.out.println("Not a Strong number");
+        }
+    }
+}
